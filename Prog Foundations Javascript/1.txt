@@ -1,0 +1,56 @@
+// write your code here
+
+var image = new SimpleImage('smalllion.jpg');
+var width = image.getWidth();
+
+for (var pixel of image.values()) {
+    if (pixel.getX() <= width / 3) {
+        // modify pixel
+        pixel.setRed(255);
+    }
+    else if (pixel.getX() <= 2 * width / 3) {
+        // modify pixel
+        pixel.setGreen(255);
+    }
+    else {
+        // modify pixel
+        pixel.setBlue(255);
+    }
+}
+
+print (image);
+
+
+function swapRedGreen(pxl){
+	var tmp = pxl.getRed();
+	pxl.setRed(pxl.getGreen());
+	pxl.setGreen(tmp);
+}
+
+var image2 = new SimpleImage('smalllion.jpg');
+
+print (image2);
+
+for (var pixel of image2.values()) {
+    swapRedGreen(pixel);
+}
+
+print (image2);
+
+
+var image3 = new SimpleImage('duke_blue_devil.png');
+
+print (image3);
+
+for (var pixel of image3.values()) {
+    if (pixel.getRed() < 255) {
+        // modify pixel
+        pixel.setRed(255);
+        pixel.setGreen(255);
+        pixel.setBlue(0);
+    }
+}
+
+print (image3);
+
+

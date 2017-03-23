@@ -1,0 +1,56 @@
+// steganography
+
+function clearBits(p) {
+    // zero low bits
+    var c = Math.floor(p * 16) / 16;
+    return c;
+}
+
+function chop2hide(i) {
+    for (var p of i.values()){
+        p.setRed(clearBits(p.getRed()));
+        p.setGreen(clearBits(p.getGreen()));
+        p.setBlue(clearBits(p.getBlue()));
+    }
+    return i;
+}
+
+function shift(i) {
+    for (var p of i.values()){
+        p.setRed(p.getRed() / 16);
+        p.setGreen(p.getGreen() / 16);
+        p.setBlue(p.getBlue() / 16);
+    }
+    return i;
+}
+
+function combine(show, hide) {
+    var answer = new SimpleImage(show.getWidth(), show.getHeight());
+    for (var p of answer.values()) {
+        var x = p.getX();
+        var y = p.getY();
+        var sp = show.getPixel(x, y);
+        var hp = hide.getPixel(x, y);
+        p.setRed(sp.getRed() + hp.getRed());
+        p.setGreen(sp.getGreen() + hp.getGreen());
+        p.setBlue(sp.getBlue() + hp.getBlue());
+        
+    }
+    return answer;
+    
+}
+
+var start = new SimpleImage('usain.jpg');
+var hide = new SimpleImage('skyline.jpg');
+
+start = chop2hide(start);
+hide = shift(hide);
+
+print(start);
+print(hide);
+
+var ans = combine(start, hide);
+print(ans);
+
+
+

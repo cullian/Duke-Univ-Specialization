@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=key
+comment0.target=CaesarCipher(int)
+comment1.params=input
+comment1.target=java.lang.String\ encrypt(java.lang.String)
+comment2.params=input
+comment2.target=java.lang.String\ decrypt(java.lang.String)
+comment3.params=
+comment3.target=void\ testCaesar()
+comment3.text=\ \ \ \ public\ void\ testEncrypt\ (){\r\n\ \ \ \ \ \ \ \ System.out.println("At\ noon\ be\ in\ the\ conference\ room\ with\ your\ hat\ on\ for\ a\ surprise\ party.\ YELL\ LOUD\!");\r\n\ \ \ \ \ \ \ \ System.out.println(encrypt("At\ noon\ be\ in\ the\ conference\ room\ with\ your\ hat\ on\ for\ a\ surprise\ party.\ YELL\ LOUD\!"));\r\n\ \ \ \ \ \ \ \ System.out.println("First\ Legion");\r\n\ \ \ \ \ \ \ \ System.out.println(encrypt("First\ Legion"));\r\n\ \ \ \ \ \ \ \ System.out.println(encrypt("First\ Legion"));\r\n\ \ \ \ }\r\n
+numComments=4
